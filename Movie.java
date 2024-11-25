@@ -24,7 +24,6 @@ public class Movie {
         return _title;
     }
 
-    // Novo método para calcular o valor com base em daysRented
     public double getCharge(int daysRented) {
         double thisAmount = 0;
         switch (getPriceCode()) {
@@ -43,5 +42,13 @@ public class Movie {
                 break;
         }
         return thisAmount;
+    }
+
+    // Novo método para calcular pontos de locação frequente
+    public int getFrequentRenterPoints(int daysRented) {
+        if (getPriceCode() == NEW_RELEASE && daysRented > 1) {
+            return 2;
+        }
+        return 1;
     }
 }
