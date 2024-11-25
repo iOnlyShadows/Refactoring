@@ -27,8 +27,8 @@ public class Customer {
             double thisAmount;
             Rental each = rentals.nextElement();
 
-            // Chamando o método extraído
-            thisAmount = amountFor(each);
+            // Atualizando a chamada para o método getCharge()
+            thisAmount = each.getCharge();
 
             // Adicionando pontos de locação frequente
             frequentRenterPoints++;
@@ -46,26 +46,5 @@ public class Customer {
         result += "You earned " + String.valueOf(frequentRenterPoints) +
                 " frequent renter points";
         return result;
-    }
-
-    // Método extraído com o parâmetro renomeado para aRental
-    private double amountFor(Rental aRental) {
-        double thisAmount = 0;
-        switch (aRental.getMovie().getPriceCode()) {
-            case Movie.REGULAR:
-                thisAmount += 2;
-                if (aRental.getDaysRented() > 2)
-                    thisAmount += (aRental.getDaysRented() - 2) * 1.5;
-                break;
-            case Movie.NEW_RELEASE:
-                thisAmount += aRental.getDaysRented() * 3;
-                break;
-            case Movie.CHILDRENS:
-                thisAmount += 1.5;
-                if (aRental.getDaysRented() > 3)
-                    thisAmount += (aRental.getDaysRented() - 3) * 1.5;
-                break;
-        }
-        return thisAmount;
     }
 }
