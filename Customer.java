@@ -24,21 +24,19 @@ public class Customer {
         String result = "Rental Record for " + getName() + "\n";
 
         while (rentals.hasMoreElements()) {
-            double thisAmount;
-            Rental each = rentals.nextElement();
-
-            // Atualizando a chamada para o método getCharge()
-            thisAmount = each.getCharge();
+            Rental each = (Rental) rentals.nextElement();
 
             // Adicionando pontos de locação frequente
             frequentRenterPoints++;
             if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) &&
                     each.getDaysRented() > 1) frequentRenterPoints++;
 
-            // Adicionando informações do aluguel ao resultado
-            result += "\t" + each.getMovie().getTitle() + "\t" +
-                    String.valueOf(thisAmount) + "\n";
-            totalAmount += thisAmount;
+            // Mostrando valores para este aluguel
+            result += "\t" + each.getMovie().getTitle() + "\t" + 
+                    String.valueOf(each.getCharge()) + "\n";
+
+            // Somando ao total geral
+            totalAmount += each.getCharge();
         }
 
         // Adicionando rodapé ao resultado
