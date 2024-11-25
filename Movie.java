@@ -41,7 +41,6 @@ public class Movie {
     }
 
     public int getFrequentRenterPoints(int daysRented) {
-        // Delegando o cálculo para a classe Price
         return _price.getFrequentRenterPoints(daysRented);
     }
 }

@@ -3,8 +3,8 @@ public abstract class Price {
 
     public abstract double getCharge(int daysRented);
 
+    // Versão genérica e concreta para pontos de locação frequente
     public int getFrequentRenterPoints(int daysRented) {
-        // Lógica padrão para frequent renter points
-        return 1;
+        return 1; // Valor padrão
     }
 }
