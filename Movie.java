@@ -37,11 +37,11 @@ public class Movie {
     }
 
     public double getCharge(int daysRented) {
-        // Delegando o cálculo para a classe Price
         return _price.getCharge(daysRented);
     }
 
     public int getFrequentRenterPoints(int daysRented) {
+        // Delegando o cálculo para a classe Price
         return _price.getFrequentRenterPoints(daysRented);
     }
 }

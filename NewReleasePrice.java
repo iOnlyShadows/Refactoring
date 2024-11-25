@@ -10,6 +10,7 @@ public class NewReleasePrice extends Price {
 
     @Override
     public int getFrequentRenterPoints(int daysRented) {
+        // Lógica específica para novos lançamentos
         return (daysRented > 1) ? 2 : 1;
     }
 }
