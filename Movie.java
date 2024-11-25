@@ -36,12 +36,11 @@ public class Movie {
         return _title;
     }
 
-    // Método delegado para calcular o valor com base em daysRented
     public double getCharge(int daysRented) {
+        // Delegando o cálculo para a classe Price
         return _price.getCharge(daysRented);
     }
 
-    // Método delegado para calcular pontos de locação frequente
     public int getFrequentRenterPoints(int daysRented) {
         return _price.getFrequentRenterPoints(daysRented);
     }
